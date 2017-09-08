@@ -8,8 +8,6 @@ Under GPL license
 v0
 [![DOI](https://zenodo.org/badge/102292127.svg)](https://zenodo.org/badge/latestdoi/102292127)
 
-[TOC]
-
 Working with MRI data
 ---------------------
 
@@ -33,19 +31,19 @@ I think that the k-space formatted files are converted into **NIfTI** or **Analy
 
  - The **image** is the data in a 3D matrix that contains a value for each voxel.
  - The **header** contains metadata
-  - Voxel dimension
-  - Voxel extend in each dimension
-  - The number of measured time points
-  - A transformation matrix that places the 3D matrix in the image in a 3D coordinate system
-  - etc
+   - Voxel dimension
+   - Voxel extend in each dimension
+   - The number of measured time points
+   - A transformation matrix that places the 3D matrix in the image in a 3D coordinate system
+   - etc
 
 #### sMRI data
 
 > - High-resolution images used as reference images for
->  - corregistration
->  - normalization
->  - segmentation
->  - surface reconstruction
+>   - corregistration
+>   - normalization
+>   - segmentation
+>   - surface reconstruction
 > - Voxel resolution ranges from 0.2-1.5mm depending on the magnetic field of the scanner (1.5T, 3T, or 7T)
 > - Grey matter structures are dark
 > - White matter structures are light
@@ -140,9 +138,9 @@ Used on both structural and functional data
 #### Segmentation (sMRI only)
 
  - Divides the brain into neurological sections according to a template specification
-  - GM, WM, and CSF done with SPM's Segmentation
-  - Segmenting into specific functional regions and their subregions done with FreeSurfer's recon-all
-  - Can aid normalization, use specific segmentation as a mask, use segmentation as definition of ROI
+   - GM, WM, and CSF done with SPM's Segmentation
+   - Segmenting into specific functional regions and their subregions done with FreeSurfer's recon-all
+   - Can aid normalization, use specific segmentation as a mask, use segmentation as definition of ROI
 
 ### Model Specification and Estimation
 
@@ -188,8 +186,8 @@ Applying the model on the time course of each and every voxel. SPM will create i
 
 Specify how to weight the different regressors of your design matrix and combine them into one image. Essentially, how can you numerically weight what you are interested in such that it's on the same scale.
 
-> Examples:
-> faces (+1) vs resting (-1)
+> Examples:  
+> faces (+1) vs resting (-1)  
 > session 1 (+1) vs session 2 (-1))
 
 #### Thresholding
@@ -220,22 +218,22 @@ The other files follow
 > > > .nii.gz
 > >
 > > func/
-> > > .nii.gz
+> > > .nii.gz  
 > > > .json
 > >
 > > dwi/
-> > > .nii.gz
-> > > .json
-> > > .bval
+> > > .nii.gz  
+> > > .json  
+> > > .bval  
 > > > .bvec
 
 ## File extensions in openfmri/ds000221
 
-###[FLAIR](https://en.wikipedia.org/wiki/Fluid-attenuated_inversion_recovery)
+### [FLAIR](https://en.wikipedia.org/wiki/Fluid-attenuated_inversion_recovery)
 
 It's a pulse sequence used in MRI; can be 2D or 3D. Can be used to suppress CSF effects. Helpful for studying lacunar infarction, MS plaques, Subarachnoid heamorrhage, head trauma, and meningitis. The inversion time (TI) chooses which signal is nullified.
 
-###[T1map](http://www-mrsrl.stanford.edu/~jbarral/t1map.html)
+### [T1map](http://www-mrsrl.stanford.edu/~jbarral/t1map.html)
 
 T1 mapping may be used to
  - optimize parameters for a sequence (Ernst angle is $acos(e^{-TR/T1})$)
